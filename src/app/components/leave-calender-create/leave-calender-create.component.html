@@ -1,0 +1,63 @@
+<div class="container mt-5">
+    <h1>Create new Record</h1>
+        <div class="row">
+            <div class="col-md-6 text-center mt-3 mx-auto">
+                <mat-card class="example-card">
+                  <div class="m-3 fs-5">
+                    <small *ngIf="success_message" class="success-msg fw-bold">Record has been added successfully
+                      <span><i class="fa fa-check-circle" style="color:green;"></i></span>&nbsp; Loading Dashboard...  <span class="spinner-border text-success" ></span> </small>
+                  </div> 
+                    <!-- form -->
+                    <form [formGroup]="leaveCalenderForm" (ngSubmit)="leaveCalender()" class="m-5 mb-3">  
+                        <div class="d-flex justify-content-center" >
+                          <mat-form-field class="example-full-width" appearance="outline" style=width:500px;>
+                           <mat-label>Year</mat-label>
+                             <input type="year" matInput formControlName="year" placeholder="Ex. 2022">
+                            <mat-error *ngIf="hasError('year', 'required')">Year is required!</mat-error>
+                            <mat-error *ngIf="hasError('year', 'maxlength')">You have more than 4 characters!</mat-error>
+                            <mat-error *ngIf="hasError('year', 'minlength')">Please enter minimum 4 characters!</mat-error>
+                          </mat-form-field>
+                        </div>
+          
+                        <div class="d-flex justify-content-center">
+                            <mat-form-field appearance="outline" style=width:500px;>
+                              <mat-label>Choose date</mat-label>
+                               <input matInput [matDatepicker]="dp" formControlName="date" placeholder="Ex. 02/07/1996">
+                               <mat-error *ngIf="hasError('date', 'required')">Date is required!</mat-error>
+                                  <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+                                  <mat-datepicker #dp></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+          
+                        <div class="d-flex justify-content-center">
+                          <mat-form-field class="example-full-width" appearance="outline" style=width:500px;>
+                            <mat-label>Reason</mat-label>
+                              <input type="reason" matInput formControlName="reason" placeholder="Ex. What is reason for leave">
+                              <mat-error *ngIf="hasError('reason', 'required')">Reason is required!</mat-error>
+                            <mat-error *ngIf="hasError('reason', 'maxlength')">You have more than 60 characters!</mat-error>
+                           </mat-form-field>
+                        </div>
+          
+                        <div class="d-flex justify-content-center">
+                          <mat-form-field appearance="outline" style=width:500px;>
+                           <mat-label>Select Type</mat-label>
+                              <mat-select formControlName="type">
+                                  <mat-option value="Optional" >Optional</mat-option>
+                                     <mat-option value="Mandatory">Mandatory</mat-option>
+                              </mat-select>
+                              <mat-error *ngIf="hasError('type', 'required')">Type is required!</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <br>
+                        <div class="d-flex justify-content-center mt-2">
+                            <button type="submit" 
+                            mat-raised-button color="primary">SAVE</button>
+                          <button routerLink="/leave-calender/view" mat-button>BACK</button>
+                        </div>
+                      </form>
+                    <!-- form end -->
+
+                  </mat-card>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="row">
+      
+      <div class="m-3 fs-5">
+        <small *ngIf="success_message" class="success-msg fw-bold">Record has been added successfully
+          <span><i class="fa fa-check-circle" style="color:green;"></i></span>&nbsp; Loading Dashboard...  <span class="spinner-border text-success" ></span> </small>
+      </div>
+      
+        <div class="col-md-6 p-2 text-center mt-5 mx-auto">
+            <mat-card class="example-card"> 
+
+                <form [formGroup]="userForm" (ngSubmit)="userFormdata()">
+  
+                    <div class="d-flex justify-content-center">
+                      <mat-form-field class="example-full-width" appearance="outline" style=width:500px;>
+                       <mat-label>First name</mat-label>
+                         <input type="firstname" matInput formControlName="fname" placeholder="Ex. Elon">
+                         <mat-error *ngIf="hasError('fname', 'required')">First name is required!</mat-error>
+                        <mat-error *ngIf="hasError('fname', 'maxlength')">You have more than 15 characters!</mat-error>
+                        <mat-error *ngIf="hasError('fname', 'minlength')">Please enter minimum 3 characters!</mat-error> 
+                      </mat-form-field>
+                    </div>
+      
+                    <div class="d-flex justify-content-center">
+                        <mat-form-field class="example-full-width" appearance="outline" style=width:500px;>
+                         <mat-label>Last name(Optional)</mat-label>
+                           <input type="lastname" matInput formControlName="lname" placeholder="Ex. Elon">
+                          <mat-error *ngIf="hasError('lname', 'required')">Last name is required!</mat-error> 
+                          <mat-error *ngIf="hasError('lname', 'maxlength')">You have more than 15 characters!</mat-error>
+                          <mat-error *ngIf="hasError('lname', 'minlength')">Please enter minimum 3 characters!</mat-error> 
+                        </mat-form-field>
+                      </div>
+                      <div class="d-flex justify-content-center">
+                        <mat-form-field class="example-full-width" appearance="outline" style=width:500px;>
+                         <mat-label>Email</mat-label>
+                           <input type="email" matInput formControlName="email" placeholder="Ex. Elon@gmail.com">
+                          <mat-error *ngIf="hasError('email', 'required')">Email is required!</mat-error>
+                         <mat-error *ngIf="hasError('email', 'email')">Email format should be in aaa12345@email.com!</mat-error>
+                        </mat-form-field>
+                      </div>
+    
+                      <div class="d-flex justify-content-center">
+                        <mat-form-field class="example-full-width" appearance="outline" style=width:500px;>
+                         <mat-label>Password</mat-label>
+                           <input type="password" matInput formControlName="password" placeholder="Ex. Elon12345@#$%">
+                           <mat-error *ngIf="hasError('password', 'required')">Password is required!</mat-error>
+                         <mat-error *ngIf="hasError('password', 'pattern')">Password should be strong!</mat-error>
+                        </mat-form-field>
+                      </div>
+    
+                      <div class="d-flex justify-content-center">
+                        <mat-form-field class="example-full-width" appearance="outline" style=width:500px;>
+                         <mat-label>Role</mat-label>
+                           <input type="role" matInput formControlName="role" placeholder="Ex. Team Leader">
+                          <mat-error *ngIf="hasError('role', 'required')">Role is required!</mat-error>
+                       <mat-error *ngIf="hasError('role', 'maxlength')">You have more than 30 characters!</mat-error>
+                          <mat-error *ngIf="hasError('role', 'minlength')">Please enter minimum 5 characters!</mat-error> 
+                        </mat-form-field>
+                      </div>
+    
+                      <div class="d-flex justify-content-center">
+                        <mat-form-field class="example-full-width" appearance="outline" style=width:500px;>
+                         <mat-label>Designation</mat-label>
+                           <input type="designation" matInput formControlName="designation" placeholder="Ex. Angular developer">
+                        <mat-error *ngIf="hasError('designation', 'required')">designation is required!</mat-error>
+                         <mat-error *ngIf="hasError('designation', 'maxlength')">You have more than 30 characters!</mat-error>
+                          <mat-error *ngIf="hasError('designation', 'minlength')">Please enter minimum 5 characters!</mat-error> 
+                        </mat-form-field>
+                      </div>
+    
+               <div class="d-flex justify-content-center">
+                        <mat-form-field appearance="outline" style=width:500px;>
+                          <mat-label>Date of Joining</mat-label>
+                           <input matInput [matDatepicker]="doj" formControlName="doj" placeholder="Ex. 02/07/1996">
+                                 <mat-error *ngIf="hasError('doj', 'required')">Date of joining is required!</mat-error>
+                              <mat-datepicker-toggle matSuffix [for]="doj"></mat-datepicker-toggle>
+                              <mat-datepicker #doj></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+      
+                    <br>
+                    <div class="d-flex justify-content-center">
+                      <button type="submit" class="btn btn-success btn-block gradient-custom-3 text-body">Create</button>
+                      <button  routerLink="/user/view" type="button" class="btn btn-success btn-block  gradient-custom-3 text-body ms-3">View</button>
+                    </div>
+                  </form>
+              </mat-card>
+              <br>
+              
+        </div>
+    </div>
+</div>

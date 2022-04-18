@@ -1,0 +1,66 @@
+<div class="mt-3">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <h2 class="code me-5 text-center fs-5 p-1" style="color:rgba(20, 104, 153, 0.993);" >LEAVE CALENDEDR DASHBOARD</h2>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto   mb-lg-0">
+        <li class="nav-item ms-sm-0 ">
+          <button routerLink="/leave-calender/create" mat-raised-button style="color:rgb(28, 28, 99)"> create</button>
+      </li>
+      </ul>
+      
+     <form class="d-flex">
+      <mat-form-field [formGroup]="leaveCalenderSearchForm" style="width: 400px;" class="ms-sm-0 mt-sm-2">
+        <mat-icon matSuffix >search</mat-icon>
+        <input  matInput type="search"  placeholder="search year here..." class="search-input" formControlName="year" [(ngModel)]="data" appearance="outline" >
+      </mat-form-field>
+    </form>
+
+    </div>
+  </div>
+</nav>
+</div>
+
+<!-- main content area -->
+<div class="container mt-2">
+    <div style="overflow-x:auto;">
+      <div class="m-3 fs-5">
+        <small *ngIf="delete_Success" class="success-msg fw-bold">Record deleted successfully
+          <span><i class="fa fa-check-circle" style="color:green;"></i></span></small>
+      </div>
+      <table class="table table-striped">
+        <thead>
+            <tr>
+              <th>Sno</th>
+              <th>Year</th>
+              <th>Choose Date</th>
+              <th>Reason</th>
+              <th>Type</th>
+              <th scope="col" class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="(leave | leaveCalenderFilter : data) as leave">
+            <tr *ngFor="let item of leave ;let i=index">
+            <td  >{{ i+1 }}</td>
+            <td  >{{ item.year }}</td>
+            <td >{{ item.date | date : "dd/MM/yyyy"}}</td>
+            <td >{{ item.reason }}</td>
+            <td >{{ item.type }}</td>
+            
+
+            <td class="text-center">
+              
+              <a (click)="editData(item)"><mat-icon>edit</mat-icon></a>
+              <a  class="ms-4" (click)="deleteData(item.id)"><mat-icon color="warn">delete</mat-icon></a>
+            </td>
+            </tr>          
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<!-- creating model for update form -->
+<!-- model start -->

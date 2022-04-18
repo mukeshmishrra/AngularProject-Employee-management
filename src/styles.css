@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin:   0%; 
+    font-family: monospace;
+    
+    
+ }
+
+  .form-shadow {
+    background-color: rgba(144, 180, 180, 0.226);
+    box-shadow: 2px 2px 5px #c3babaec;
+  }
+  
+  
+  /* error display */
+  .error-msg {
+    color: rgb(233, 41, 41);
+    font-size: medium;
+    font-weight: bold;
+  }
+  
+  /* success message display */
+  .success-msg {
+    color: rgba(49, 149, 49, 0.972);
+  }
+  
+  .card {
+    width: 50rem;
+    font-size: large;
+    margin-top: 100px;
+  }

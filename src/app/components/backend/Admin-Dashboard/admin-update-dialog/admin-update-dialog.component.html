@@ -1,0 +1,86 @@
+<h2 mat-dialog-title>Leave Calender Update Form</h2>
+<div class="m-3 fw-bold">
+  <small *ngIf="success_message" class="success-msg">Record has been Updated successfully
+    <span><i class="fa fa-check-circle" style="color:green;"></i></span>&nbsp; Loading Dashboard...  <span class="spinner-border text-success" ></span> </small>
+</div>
+
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="exform">
+
+    <!---firstname-->
+    <div class="form-group">
+      <mat-form-field [style.width.px]=300>
+        <mat-label>Enter your username</mat-label>
+        <input type="text" matInput placeholder="enter your firstname" formControlName="firstname" maxlength="12"
+          name="username" [(ngModel)]="userobj1.firstname" required>
+      </mat-form-field>
+    </div>
+    <br>
+    <!---lastname-->
+    <div class="form-group">
+      <mat-form-field [style.width.px]=300>
+        <mat-label>Enter your lastname</mat-label>
+        <input type="text" matInput placeholder="enter your lastname" formControlName="lastname" maxlength="12"
+          name="username" [(ngModel)]="userobj1.lastname" required>
+      </mat-form-field>
+    </div>
+    <br>
+    <!---email-->
+    <div class="form-group">
+      <mat-form-field [style.width.px]=300>
+        <mat-label>Enter your email</mat-label>
+        <input type="email" matInput placeholder="enter your email" formControlName="email" maxlength="40"
+          name="username" [(ngModel)]="userobj1.email" required>
+      </mat-form-field>
+    </div>
+    <br>
+    <!---password-->
+    <div class="form-group">
+      <mat-form-field [style.width.px]=300>
+        <input type="password" matInput placeholder="enter your password" formControlName="password" name="password"
+          [(ngModel)]="userobj1.password" required>
+        <small *ngIf="exform.get('password')?.invalid && exform.get('password')?.touched" class="text-danger">enter a
+          valid password</small>
+      </mat-form-field>
+    </div>
+    <br>
+    <!---role-->
+    <div class="form-group">
+      <mat-form-field [style.width.px]=300>
+        <mat-label>Enter your role</mat-label>
+        <input type="text" matInput placeholder="enter your role" formControlName="role" maxlength="12" name="username"
+          [(ngModel)]="userobj1.role" required>
+      </mat-form-field>
+    </div>
+    <br>
+
+    <!---designation-->
+    <div class="form-group">
+      <mat-form-field [style.width.px]=300>
+        <mat-label>Enter your designation</mat-label>
+        <input type="text" matInput placeholder="enter your designation" formControlName="designation" maxlength="12"
+          name="username" [(ngModel)]="userobj1.designation" required>
+      </mat-form-field>
+    </div>
+    <br>
+    
+    <!----datepicker-->
+    <div class="form-group">
+      <mat-form-field [style.width.px]=300>
+          <label class="col-form-label">Date of joining</label>
+          <input formControlName="date" matInput name="date"  [(ngModel)]="userobj1.date"
+              [matDatepicker]="datepicker">
+          <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+          <mat-datepicker #datepicker></mat-datepicker>
+          <small *ngIf="exform.get('date')?.invalid && exform.get('date')?.touched"
+              class="text-danger">please specify date</small>
+
+      </mat-form-field>
+  </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" style="margin-right: 50px;">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button type="submit" mat-raised-button (click)="updateUser()" cdkFocusInitial color="primary">Update</button>
+</mat-dialog-actions>

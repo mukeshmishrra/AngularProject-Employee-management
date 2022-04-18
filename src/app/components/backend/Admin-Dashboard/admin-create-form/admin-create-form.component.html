@@ -1,0 +1,117 @@
+<mat-toolbar>
+    <h5 class="mx-auto">Employee Admin Dashboard</h5>
+</mat-toolbar>
+
+   
+    <div class="container-fluid ">
+        <form [formGroup]="exform">
+            <div class="m-3 fs-5">
+                <small *ngIf="success_message" class="success-msg fw-bold">Record has been added successfully
+                  <span><i class="fa fa-check-circle" style="color:green;"></i></span>&nbsp; Loading Dashboard...  <span class="spinner-border text-success" ></span> </small>
+              </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!--username-->
+                    <div class="container pt-2">
+                        <div class="row justify-content-sm-center pt-5">
+                            <div class="col-sm-7 shadow round pb-3 ">
+                                <!--firstname-->
+                                <div class="form-group">
+                                    <div class="mb-1">
+                                        <label class="col-form-label">First Name:</label>
+                                        <input type="text" formControlName="firstname" maxlength="15" name="username"
+                                            class="form-control">
+                                        <small
+                                            *ngIf="exform.get('firstname')?.invalid && exform.get('firstname')?.touched"
+                                            class="text-danger">First Name is Required</small>
+                                    </div>
+                                    
+
+                                    <!---lastname-->
+                                    <div class="form-group">
+                                        <div class="mb-1">
+                                            <label class="col-form-label">Last Name:</label>
+                                            <input type="text" formControlName="lastname" maxlength="15" name="username"
+                                                class="form-control">
+                                            <small
+                                                *ngIf="exform.get('lastname')?.invalid && exform.get('lastname')?.touched"
+                                                class="text-danger">Last Name is Required</small>
+                                        </div>
+                                       
+
+                                        <!---email-->
+
+                                        <div class="mb-1">
+                                            <label class="col-form-label">Email:</label>
+                                            <input formControlName="email" type="text" class="form-control">
+                                            <small *ngIf="exform.get('email')?.invalid && exform.get('email')?.touched"
+                                                class="text-danger">please specify right email id</small>
+                                        </div>
+                                        
+                                        <!--password-->
+
+                                        <div class="mb-1">
+                                            <label class="col-form-label">password:</label>
+                                            <input formControlName="password" type="password" class="form-control">
+                                            <small
+                                                *ngIf="exform.get('password')?.invalid && exform.get('password')?.touched"
+                                                class="text-danger">enter a valid and strong password</small>
+                                        </div>
+                                       
+                                        <!---role-->
+
+                                        <div class="mb-1">
+                                            <label class="col-form-label">role</label>
+                                            <input formControlName="role" type="text" class="form-control">
+                                            <small *ngIf="exform.get('role')?.invalid && exform.get('role')?.touched"
+                                                class="text-danger">please mention your role</small>
+                                        </div>
+                                        
+
+
+                                        <!---designation-->
+
+                                        <div class="mb-1">
+                                            <label class="col-form-label">designation</label>
+                                            <input formControlName="designation" type="text" class="form-control">
+                                            <small
+                                                *ngIf="exform.get('designation')?.invalid && exform.get('designation')?.touched"
+                                                class="text-danger">please mention your designation</small>
+                                        </div>
+
+                                        <br>
+                                    <!----datepicker-->
+                                    <div class="d-flex  mt-1">
+                                        <mat-form-field appearance="outline" style="width: 100%" >
+                                            <mat-label>Date of Joining</mat-label>
+                                            <input formControlName="date" matInput name="date"
+                                                [matDatepicker]="datepicker">
+                                            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+                                            <mat-datepicker #datepicker></mat-datepicker>
+                                            <small *ngIf="exform.get('date')?.invalid && exform.get('date')?.touched"
+                                                class="text-danger">please specify date</small>
+
+                                        </mat-form-field>
+
+                                    </div>
+                                    </div>
+
+
+                                    <br>
+
+                                    
+                                    <!---buttons-->
+
+                                    <button (click)="adduser()"
+                                        class="btn btn-success">Add</button> &nbsp;
+
+                                    <button routerLink="/admin-dashboard/view" type="button" class="btn btn-danger">view</button>
+
+                                </div>
+
+
+                                <div>
+                                </div>
+                            </div>
+
+                        </div>

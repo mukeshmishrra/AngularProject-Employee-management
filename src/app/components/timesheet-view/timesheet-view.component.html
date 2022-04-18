@@ -1,0 +1,64 @@
+<div class="mt-3">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <h2 class="code me-5 text-center fs-5 p-1" style="color: rgba(20, 104, 153, 0.993);">Timesheet Dashboard</h2>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto me-2  mb-lg-0 ">
+          <li class="nav-item ms-sm-0 ">
+             <!--create button-->
+             <button routerLink="/create" mat-raised-button color="accent"  matBadge="+" matBadgePosition="after" matBadgeColor="primary"> create</button>
+        </li>
+        </ul>
+      
+      </div>
+    </div>
+  </nav>
+  </div>
+
+<div class="container">
+  <div style="overflow-x:auto; ">
+    <!-- <button class="btn btn-success" routerLink="/create"><i class="fa fa-plus"
+        style="font-size:20px;color:orange"></i>&nbsp; CREATE</button> -->
+
+      
+    <div class="m-3 fs-5">
+      <small *ngIf="delete_success" class="success-msg fw-bold">Record deleted successfully
+        <span><i class="fa fa-check-circle" style="color:green;"></i></span> </small>
+    </div>
+    
+    <table class="table table-striped shadow-sm bg-white rounded">
+
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Project</th>
+          <th scope="col">Number of Hrs</th>
+          <th scope="col">Date</th>
+          <th scope="col">Description</th>
+          <th scope="col" class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let items of emp_timesheet">
+          <td>{{ items.emp_name }}</td>
+          <td>{{ items.project }}</td>
+          <!-- <td>{{ items.from_time | date:'shortTime' }}</td>
+                   <td>{{ items. to_time | date:'shortTime' }}</td> -->
+          <td>{{ items.no_of_hrs }} hrs</td>
+         
+          <!-- <td>{{ items.date | date:'shortDate' }}</td> -->
+          <td>{{ items.date | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ items.description }}</td>
+          <td class="text-center">
+            <!-- <a routerLink="/edit/{{items.id}}" class="btn btn-secondary"> <i class="fa fa-pencil"></i></a> -->
+            <a routerLink="/edit/{{items.id}}"> <mat-icon>edit</mat-icon></a>
+            <a class="ms-4" (click)="deleteSelectedData(items.id)"><mat-icon color="warn">delete</mat-icon></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

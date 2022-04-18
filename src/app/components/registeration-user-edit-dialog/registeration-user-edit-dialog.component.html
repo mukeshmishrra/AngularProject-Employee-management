@@ -1,0 +1,123 @@
+<h2 mat-dialog-title>User Records Update Form</h2>
+<div class="m-3 fs-5">
+    <small *ngIf="success_message" class="success-msg fw-bold">Record has been updated successfully
+    <span><i class="fa fa-check-circle" style="color:green;"></i></span> </small>
+</div>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="editForm">
+        <div class="d-flex justify-content-center">
+            <!-- fisrt name -->
+            <mat-form-field class="example-full-width" appearance="outline" style=width:500px;>
+                <mat-label>Enter Name</mat-label>
+                <input type="text" placeholder="Name" formControlName="Name" matInput>
+                <!-- error handle for firstname -->
+                <div *ngIf="submit && f['Name']['errors'] || f['Name']['errors']">
+                    <mat-error *ngIf="submit && f['Name']['errors']['required']">
+                        *Firstname is required field.
+                    </mat-error>
+                    <mat-error *ngIf="f['Name']['errors']&&f['Name']['errors']['minlength'] ">
+                        *Name must have atleast 2 characters
+                    </mat-error>
+                    <mat-error *ngIf="f['Name']['errors']&& f['Name']['errors']['maxlength'] ">
+                        *Maximum 20 characters allowed only.
+                    </mat-error>
+                    <mat-error *ngIf="f['Name']['errors']&& f['Name']['errors']['pattern'] ">
+                        *Name should be only character please use valid username
+                    </mat-error>
+                </div>
+            </mat-form-field>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <!-- last name -->
+            <mat-form-field appearance="outline" style=width:500px;>
+                <mat-label>Enter lastname (optional) </mat-label>
+                <input type="text" placeholder="lastname" formControlName="lastname" matInput>
+                <!-- error handle for lastname -->
+                <div *ngIf="submit && f['lastname']['errors'] || f['lastname']['errors']">
+                    <mat-error *ngIf="submit && f['lastname']['errors']['required']">
+                        *Last is required field.
+                    </mat-error>
+                    <mat-error *ngIf="f['lastname']['errors']&&f['lastname']['errors']['minlength'] ">
+                        *Name must have atleast 2 characters
+                    </mat-error>
+                    <mat-error *ngIf="f['lastname']['errors']&& f['lastname']['errors']['maxlength'] ">
+                        *Maximum 20 characters allowed only.
+                    </mat-error>
+                    <mat-error *ngIf="f['lastname']['errors']&& f['lastname']['errors']['pattern'] ">
+                        *lastname should be only character please use valid username
+                    </mat-error>
+                </div>
+            </mat-form-field>
+        </div>
+
+
+        <div class="d-flex justify-content-center">
+            <!-- mailid -->
+            <mat-form-field appearance="outline" style=width:500px;>
+                <mat-label>Enter Email</mat-label>
+                <input type="text" placeholder="Email Id" formControlName="emailid" matInput>
+                <!-- email errors handle-->
+                <div *ngIf="submit && f['emailid']['errors'] ||  f['emailid']['errors']">
+                    <mat-error *ngIf="submit && f['emailid']['errors'] ['required']">email id must required
+                    </mat-error>
+                    <mat-error *ngIf="f['emailid']['errors'] ['email']"> email id not valid</mat-error>
+
+                </div>
+            </mat-form-field>
+
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <!-- password -->
+            <mat-form-field appearance="outline" style=width:500px;>
+                <mat-label>Enter Password</mat-label>
+                <input type="password" placeholder="Password" formControlName="password" matInput>
+                <!-- password error handle -->
+                <div *ngIf="submit &&f['password']['errors'] || f['password']['errors'] ">
+                    <mat-error *ngIf="submit && f['password']['errors']['required']">
+                        password must required
+                    </mat-error>
+                    <mat-error *ngIf="f['password']['errors']&& f['password']['errors']['minlength']">
+                        password must have 7 charact
+                    </mat-error>
+                </div>
+            </mat-form-field>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <!-- mobile number -->
+            <mat-form-field appearance="outline" style=width:500px;>
+                <mat-label>Enter mobile</mat-label>
+                <input type="text" placeholder="mobile" formControlName="mobile" matInput>
+                <!-- mobil error handle -->
+                <div *ngIf="submit &&f['mobile']['errors'] || f['mobile']['errors']">
+                    <mat-error *ngIf="submit && f['mobile']['errors'] ['required']">*mobile number is required
+                    </mat-error>
+                    <mat-error *ngIf="f['mobile']['errors'] ['minlength']">*Mobile number should be 10 digit
+                    </mat-error>
+                    <mat-error *ngIf="f['mobile']['errors'] ['maxlength']">*Mobile number should be 10 digit
+                    </mat-error>
+                    <mat-error *ngIf="f['mobile']['errors'] ['pattern']">*Please enter valid mobile number
+                    </mat-error>
+                </div>
+            </mat-form-field>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <!-- designation -->
+            <mat-form-field appearance="outline" style=width:500px;>
+                <mat-label>Enter designation</mat-label>
+                <input type="text" placeholder="designation" formControlName="designation" matInput>
+                <mat-error
+                    *ngIf="submit &&f['designation']['errors']&&f['designation']['errors']['required'] || f['designation']['errors']&&f['designation']['errors']['required'] ">
+                    designation is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-card-actions>
+    <button mat-button (click)="updateData()" color="primary">Update</button>
+    <button mat-button (click)="closeDialog()" color="accent">close</button>
+</mat-card-actions>

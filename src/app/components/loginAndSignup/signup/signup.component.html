@@ -1,0 +1,138 @@
+<div class="container">
+    <mat-card>
+        <div class="mb-5">
+            <mat-card-title>
+                Sign Up
+                <div class="m-3">
+                    <small *ngIf="success_message" class="success-msg fw-bold">Registration completed successfully
+                        <span><i class="fa fa-check-circle" style="color:green;"></i></span>
+                    </small>
+                </div>
+
+            </mat-card-title>
+        </div>
+        <mat-card-content>
+            <form [formGroup]="signupForm" autocomplete="off">
+                <!-- first name -->
+                <mat-form-field appearance="outline" class="mb-1">
+                    <mat-label>Enter Name</mat-label>
+                    <input type="text" formControlName="Name" placeholder="Name" matInput>
+                    <!-- error handle for firstname -->
+                    <div *ngIf="submit && f['Name']['errors'] || f['Name']['errors']">
+                        <mat-error *ngIf="submit && f['Name']['errors']['required']">
+                            *Firstname is required field.
+                        </mat-error>
+                        <mat-error *ngIf="f['Name']['errors']&&f['Name']['errors']['minlength'] ">
+                            *Name must have atleast 2 characters
+                        </mat-error>
+                        <mat-error *ngIf="f['Name']['errors']&& f['Name']['errors']['maxlength'] ">
+                            *Maximum 20 characters allowed only.
+                        </mat-error>
+                        <mat-error *ngIf="f['Name']['errors']&& f['Name']['errors']['pattern'] ">
+                            *Name should be only character please use valid username
+                        </mat-error>
+                    </div>
+
+                </mat-form-field>
+
+
+                <!-- last name -->
+                <mat-form-field appearance="outline" class="mb-1">
+                    <mat-label>Enter lastname (optional) </mat-label>
+                    <input type="text" placeholder="lastname" formControlName="lastname" matInput>
+                    <!-- error handle for lastname -->
+                    <div *ngIf="submit && f['lastname']['errors'] || f['lastname']['errors']">
+                        <mat-error *ngIf="submit && f['lastname']['errors']['required']">
+                            *Last is required field.
+                        </mat-error>
+                        <mat-error *ngIf="f['lastname']['errors']&&f['lastname']['errors']['minlength'] ">
+                            *Name must have atleast 2 characters
+                        </mat-error>
+                        <mat-error *ngIf="f['lastname']['errors']&& f['lastname']['errors']['maxlength'] ">
+                            *Maximum 20 characters allowed only.
+                        </mat-error>
+                        <mat-error *ngIf="f['lastname']['errors']&& f['lastname']['errors']['pattern'] ">
+                            *lastname should be only character please use valid username
+                        </mat-error>
+                    </div>
+                </mat-form-field>
+
+                <!-- Email field -->
+                <mat-form-field appearance="outline" class="mb-1">
+                    <mat-label>Enter Email</mat-label>
+                    <input type="text" placeholder="Email Id" formControlName="emailid" matInput>
+                    <!-- email errors handle-->
+                    <div *ngIf="submit && f['emailid']['errors'] ||  f['emailid']['errors']">
+                        <mat-error *ngIf="submit && f['emailid']['errors'] ['required']">email id must required
+                        </mat-error>
+                        <mat-error *ngIf="f['emailid']['errors'] ['email']"> email id not valid</mat-error>
+                        <mat-error *ngIf="f['emailid']['errors'] ['uniqueEmail']">
+                            This email address is already registered. Please use another one.
+                        </mat-error>
+                    </div>
+
+                </mat-form-field>
+
+                <!-- password -->
+                <mat-form-field appearance="outline" class="mb-1">
+                    <mat-label>Enter Password</mat-label>
+                    <!-- <input type="password" placeholder="Password" formControlName="password" matInput> -->
+                    <input [type]="showPassword ? 'text' : 'password'" placeholder="Password" formControlName="password" matInput>
+
+                      <!-- hide and show password  -->
+                    <mat-icon matSuffix   (click)="togglePasswordVisibility()">
+                        {{showPassword?'visibility_off':'visibility'}}
+                    </mat-icon>
+                    
+                    <!-- password error handle -->
+                    <div *ngIf="submit &&f['password']['errors'] || f['password']['errors'] ">
+                        <mat-error *ngIf="submit && f['password']['errors']['required']">
+                            password must required
+                        </mat-error>
+                        <mat-error *ngIf="f['password']['errors']&& f['password']['errors']['minlength']">
+                            password must have 7 charact
+                        </mat-error>
+                    </div>
+
+                </mat-form-field>
+
+                <!-- mobile number -->
+                <mat-form-field appearance="outline" class="mb-1">
+                    <mat-label>Enter mobile</mat-label>
+                    <input type="text" placeholder="mobile" formControlName="mobile" matInput>
+                    <!-- mobil error handle -->
+                    <div *ngIf="submit &&f['mobile']['errors'] || f['mobile']['errors']">
+                        <mat-error *ngIf="submit && f['mobile']['errors'] ['required']">*mobile number is required
+                        </mat-error>
+                        <mat-error *ngIf="f['mobile']['errors'] ['minlength']">*Mobile number should be 10 digit
+                        </mat-error>
+                        <mat-error *ngIf="f['mobile']['errors'] ['maxlength']">*Mobile number should be 10 digit
+                        </mat-error>
+                        <mat-error *ngIf="f['mobile']['errors'] ['pattern']">*Please enter valid mobile number
+                        </mat-error>
+
+                    </div>
+
+                </mat-form-field>
+
+                <!-- designation -->
+                <mat-form-field appearance="outline" class="mb-1">
+                    <mat-label>Enter designation</mat-label>
+                    <input type="text" placeholder="designation" formControlName="designation" matInput>
+                    <mat-error
+                        *ngIf="submit &&f['designation']['errors']&&f['designation']['errors']['required'] || f['designation']['errors']&&f['designation']['errors']['required'] ">
+                        designation is required
+                    </mat-error>
+
+                </mat-form-field>
+
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button (click)="onSubmit(signupForm.value)" color="accent">Register</button>
+            <a href="" [routerLink]="['/login']" style="text-transform: capitalize;"> existing user? login here</a>
+
+        </mat-card-actions>
+
+    </mat-card>
+</div>

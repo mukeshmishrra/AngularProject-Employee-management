@@ -1,0 +1,74 @@
+<!-- secondary navbasr start -->
+<div class="mt-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <h2 class="code me-5 text-center fs-5 p-1" style="color: rgba(20, 104, 153, 0.993);">Users Dashboard</h2>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto me-2  mb-lg-0 ">
+                    <li class="nav-item ms-sm-0 ">
+                        <!--create button-->
+                        <button (click)="createPage()" mat-raised-button color="accent" matBadge="+"
+                            matBadgePosition="after" matBadgeColor="primary"> create</button>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- secondary navbasr end-->
+
+<!-- main content section -->
+<div class="container mt-4">
+    <div style="overflow-x:auto;">
+        <div class="m-3 fs-5">
+            <small *ngIf="delete_success" class="success-msg fw-bold">Record deleted successfully
+              <span><i class="fa fa-check-circle" style="color:green;"></i></span> </small>
+          </div>
+      
+
+        <table class="table table-striped shadow-sm bg-white rounded">
+            <thead>
+                <tr>
+                    <th>Sl no</th>
+
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Role</th>
+                    <th>Designation</th>
+                    <th>Date Of Joining</th>
+                    <th>Edit details</th>
+                    <th>Delete details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of user ;let i=index">
+                    <td>{{ i+1 }}</td>
+
+                    <td>{{ item.fname }}</td>
+                    <td>{{ item.lname }}</td>
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.password }}</td>
+                    <td>{{ item.role }}</td>
+                    <td>{{ item.designation }}</td>
+                    <td>{{ item.doj | date : "dd/MM/yyyy"}}</td>
+                    <td><a (click)="editData(item)">
+                            <mat-icon color="primary">edit</mat-icon>
+                        </a>
+                    </td>
+                    <td><a (click)="deleteData(item.id)">
+                            <mat-icon color="warn">delete</mat-icon>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

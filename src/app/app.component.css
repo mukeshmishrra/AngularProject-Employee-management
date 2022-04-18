@@ -1,0 +1,45 @@
+
+mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* profile picture  */
+.avatar {
+    margin-top: 16px;
+    
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/* side nav bar */
+
+mat-sidenav {
+    width: 230px;  
+}
+.mat-drawer { 
+    background-color: #2d404b;  
+}
+a.mat-list-item
+ {
+      color: rgba(196, 190, 190, 0.911);
+     
+ }
+ a.mat-list-item.active
+ {
+      color: rgb(231, 141, 156);
+      /* background: rgb(114, 109, 109); */
+      
+ }
+
+ /* main content */
+.main-content {
+    padding:20px;
+}
+
+/* main nav */
+.toolbar-spacer {
+    flex: 1 1 auto;
+}

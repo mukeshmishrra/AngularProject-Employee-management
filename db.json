@@ -1,0 +1,538 @@
+{
+  "timesheet": [
+    {
+      "date": "2022-01-31T11:28:59.000Z",
+      "project": "cms website",
+      "emp_name": "harry singh",
+      "description": "test  done",
+      "no_of_hrs": "7",
+      "id": 8
+    },
+    {
+      "date": "2022-02-07T18:30:00.000Z",
+      "project": "ecommerce",
+      "emp_name": "nitin",
+      "description": "test success",
+      "no_of_hrs": "4",
+      "id": 9
+    },
+    {
+      "date": "2022-02-07T18:30:00.000Z",
+      "project": "magento plugin",
+      "emp_name": "dipak",
+      "description": "working on event hooks",
+      "no_of_hrs": "6",
+      "id": 10
+    },
+    {
+      "date": "2022-02-07T18:30:00.000Z",
+      "project": "web services",
+      "emp_name": "siya",
+      "description": "response handling",
+      "no_of_hrs": "5",
+      "id": 11
+    },
+    {
+      "date": "2022-02-22T18:30:00.000Z",
+      "project": "employee management",
+      "emp_name": "mukesh",
+      "description": "working on api done",
+      "no_of_hrs": "4",
+      "id": 13
+    },
+    {
+      "date": "2022-02-28T18:30:00.000Z",
+      "project": "testing",
+      "emp_name": "nitin",
+      "description": "test",
+      "no_of_hrs": "5",
+      "id": 14
+    }
+  ],
+  "leave-management": [
+    {
+      "username": "suman shindh",
+      "from_date": "2022-02-06T18:30:00.000Z",
+      "to_date": "2022-02-17T18:30:00.000Z",
+      "reason": "test",
+      "status": "General",
+      "id": 2
+    },
+    {
+      "username": "moin",
+      "from_date": "2022-02-07T18:30:00.000Z",
+      "to_date": "2022-02-16T18:30:00.000Z",
+      "reason": "something important",
+      "status": "Emergency",
+      "id": 3
+    },
+    {
+      "username": "umraz sir",
+      "from_date": "2022-02-07T18:30:00.000Z",
+      "to_date": "2022-02-11T18:30:00.000Z",
+      "reason": "sir knows all about it",
+      "status": "General",
+      "id": 4
+    },
+    {
+      "username": "mukesh",
+      "from_date": "2022-02-22T18:30:00.000Z",
+      "to_date": "2022-02-24T18:30:00.000Z",
+      "reason": "test",
+      "status": "Emergency",
+      "id": 5
+    }
+  ],
+  "userdata": [
+    {
+      "year": "2022",
+      "date": "2022-02-28T18:30:00.000Z",
+      "reason": "Mahshivaratri",
+      "type": "Mandatory",
+      "id": 3
+    },
+    {
+      "year": "2022",
+      "date": "2022-03-17T18:30:00.000Z",
+      "reason": "Holi",
+      "type": "Optional",
+      "id": 4
+    },
+    {
+      "year": "2022",
+      "date": "2022-04-30T18:30:00.000Z",
+      "reason": "Good Friday",
+      "type": "Optional",
+      "id": 5
+    },
+    {
+      "year": "2022",
+      "date": "2022-04-30T18:30:00.000Z",
+      "reason": "May Day/Labor Day",
+      "type": "Mandatory",
+      "id": 6
+    },
+    {
+      "year": "2022",
+      "date": "2022-05-02T18:30:00.000Z",
+      "reason": "Id-ul-Fitr (Ramzan)*",
+      "type": "Mandatory",
+      "id": 7
+    },
+    {
+      "year": "2022",
+      "date": "2022-07-09T18:30:00.000Z",
+      "reason": "Id-ul-Zuha (Bakrid)*",
+      "type": "Mandatory",
+      "id": 8
+    },
+    {
+      "year": "2022",
+      "date": "2022-08-14T18:30:00.000Z",
+      "reason": "Independence Day",
+      "type": "Mandatory",
+      "id": 9
+    },
+    {
+      "year": "2020",
+      "date": "2022-02-21T18:30:00.000Z",
+      "reason": "mahashivratri",
+      "type": "Mandatory",
+      "id": 10
+    }
+  ],
+  "userdb": [
+    {
+      "fname": "example first",
+      "lname": "",
+      "email": "example@test.com",
+      "password": "Admin123!",
+      "role": "developer",
+      "designation": "full stack",
+      "doj": "2022-02-13T18:30:00.000Z",
+      "id": 2
+    },
+    {
+      "fname": "mukesh",
+      "lname": "mishra",
+      "email": "test@test.com",
+      "password": "Teast@12312",
+      "role": "developer",
+      "designation": "developer",
+      "doj": "2022-02-22T18:30:00.000Z",
+      "id": 3
+    },
+    {
+      "fname": "mikky",
+      "lname": "",
+      "email": "mikky@test.com",
+      "password": "Mikky123@",
+      "role": "test done",
+      "designation": "developer",
+      "doj": "2022-02-22T18:30:00.000Z",
+      "id": 4
+    },
+    {
+      "fname": "mukesh",
+      "lname": "",
+      "email": "mukesh@gmail.com",
+      "password": "Admin@123",
+      "role": "full stack developer",
+      "designation": "java developer",
+      "doj": "2022-02-27T18:30:00.000Z",
+      "id": 5
+    }
+  ],
+  "login_modules": [
+    {
+      "Name": "madan",
+      "lastname": "",
+      "emailid": "madan@gmail.com",
+      "password": "Admin@123",
+      "mobile": "8328632323",
+      "designation": "software developer",
+      "id": 8
+    },
+    {
+      "Name": "mukesh",
+      "lastname": "",
+      "emailid": "mukesh@test.com",
+      "password": "12345678",
+      "mobile": 843587345,
+      "designation": "full stack dev",
+      "id": 10
+    },
+    {
+      "Name": "Mukesh",
+      "lastname": null,
+      "emailid": "mukesh@gmail.com",
+      "password": "Admin@123",
+      "mobile": "8924389374",
+      "designation": "developer",
+      "id": 11
+    }
+  ],
+  "apply-leave": [
+    {
+      "username": "Madan kumar",
+      "fromDate": "2022-02-03T08:00:00.000Z",
+      "toDate": "2022-02-04T08:00:00.000Z",
+      "reason": "i tested positive on covid",
+      "status": "emergency",
+      "id": 8
+    },
+    {
+      "username": "poorni",
+      "fromDate": "2022-02-03T08:00:00.000Z",
+      "toDate": "2022-02-04T08:00:00.000Z",
+      "reason": "i tested positive on covid",
+      "status": "general",
+      "submission": "2022-02-02T18:05:13.230Z",
+      "id": 9
+    },
+    {
+      "username": "anjali",
+      "fromDate": "2022-02-03T08:00:00.000Z",
+      "toDate": "2022-02-03T08:00:00.000Z",
+      "reason": "i got stomach pain",
+      "status": "emergency",
+      "id": 12
+    },
+    {
+      "username": "jeevarishi",
+      "fromDate": "2022-02-04T08:00:00.000Z",
+      "toDate": "2022-02-04T08:00:00.000Z",
+      "reason": "i got headache",
+      "status": "emergency",
+      "id": 14
+    },
+    {
+      "username": "madans",
+      "fromDate": "2022-02-04T08:00:00.000Z",
+      "toDate": "2022-02-10T08:00:00.000Z",
+      "reason": "hahahhahh hhhhh",
+      "status": "emergency",
+      "id": 16
+    },
+    {
+      "username": "mahan gandhi",
+      "fromDate": "2022-02-07T08:00:00.000Z",
+      "toDate": "2022-02-14T08:00:00.000Z",
+      "reason": "sick leave",
+      "status": "general",
+      "id": 17
+    },
+    {
+      "username": "masaaaa",
+      "fromDate": "2022-02-04T08:00:00.000Z",
+      "toDate": "2022-02-05T08:00:00.000Z",
+      "reason": "sick leave",
+      "status": "emergency",
+      "id": 18
+    },
+    {
+      "username": "masaaaa",
+      "fromDate": "2022-02-05T08:00:00.000Z",
+      "toDate": "2022-02-07T08:00:00.000Z",
+      "reason": "sick leave",
+      "status": "emergency",
+      "id": 19
+    },
+    {
+      "username": "madans",
+      "fromDate": "2022-02-11T08:00:00.000Z",
+      "toDate": "2022-02-11T08:00:00.000Z",
+      "reason": "sick leave",
+      "status": "emergency",
+      "id": 20
+    },
+    {
+      "username": "madan kumar",
+      "fromDate": "2022-02-17T08:00:00.000Z",
+      "toDate": "2022-02-18T08:00:00.000Z",
+      "reason": "i tested positive on covid",
+      "status": "general",
+      "id": 21
+    },
+    {
+      "username": "mahan gandhi",
+      "fromDate": "2022-02-05T08:00:00.000Z",
+      "toDate": "2022-02-05T08:00:00.000Z",
+      "reason": "sick leave",
+      "status": "emergency",
+      "id": 22
+    },
+    {
+      "username": "madan kumar",
+      "fromDate": "2022-02-05T08:00:00.000Z",
+      "toDate": "2022-02-05T08:00:00.000Z",
+      "reason": "sick leave",
+      "status": "emergency",
+      "id": 23
+    },
+    {
+      "username": "mahan gandhi",
+      "fromDate": "2022-02-12T08:00:00.000Z",
+      "toDate": "2022-02-12T08:00:00.000Z",
+      "reason": "sick leave",
+      "status": "emergency",
+      "id": 25
+    },
+    {
+      "username": "mahan gandhi",
+      "fromDate": "2022-02-12T08:00:00.000Z",
+      "toDate": "2022-02-12T08:00:00.000Z",
+      "reason": "sick leave",
+      "status": "emergency",
+      "id": 27
+    },
+    {
+      "username": "mukesh",
+      "fromDate": "2022-02-15T18:30:00.000Z",
+      "toDate": "2022-02-17T18:30:00.000Z",
+      "reason": "test",
+      "status": "emergency",
+      "id": 28
+    },
+    {
+      "username": "mukesh",
+      "fromDate": "2022-02-15T18:30:00.000Z",
+      "toDate": "2022-02-17T18:30:00.000Z",
+      "reason": "test",
+      "status": "general",
+      "id": 29
+    },
+    {
+      "username": "mukesh",
+      "fromDate": "2022-02-15T18:30:00.000Z",
+      "toDate": "2022-02-17T18:30:00.000Z",
+      "reason": "esting",
+      "status": "emergency",
+      "id": 30
+    },
+    {
+      "username": "maahi mahi",
+      "fromDate": "2022-02-15T18:30:00.000Z",
+      "toDate": "2022-02-23T18:30:00.000Z",
+      "reason": "testing by mukesh",
+      "status": "emergency",
+      "id": 31
+    },
+    {
+      "username": "sonia nayak",
+      "fromDate": "2022-02-15T18:30:00.000Z",
+      "toDate": "2022-02-23T18:30:00.000Z",
+      "reason": "test",
+      "status": "emergency",
+      "id": 32
+    },
+    {
+      "username": "mukesh",
+      "fromDate": "2022-02-20T18:30:00.000Z",
+      "toDate": "2022-02-23T18:30:00.000Z",
+      "reason": "dont know",
+      "status": "general",
+      "id": 33
+    },
+    {
+      "username": "mukesh",
+      "fromDate": "2022-02-23T18:30:00.000Z",
+      "toDate": "2022-02-25T18:30:00.000Z",
+      "reason": "testing",
+      "status": "general",
+      "id": 34
+    }
+  ],
+  "admin-dashboard": [
+    {
+      "date": "2022-02-16T18:30:00.000Z",
+      "firstname": "test",
+      "lastname": "test",
+      "email": "mukesh@test.com",
+      "role": "adminfg",
+      "designation": "admin user",
+      "password": "Mukesh123@",
+      "id": 4
+    },
+    {
+      "date": "2022-02-16T18:30:00.000Z",
+      "firstname": "sonia",
+      "lastname": "mishra",
+      "email": "sonia@gmail.com",
+      "role": "admin",
+      "designation": "dev",
+      "password": "Sonia123@",
+      "id": 5
+    },
+    {
+      "date": "2022-02-16T18:30:00.000Z",
+      "firstname": "sonu",
+      "lastname": "suno",
+      "email": "sonu@gmail.com",
+      "role": "admin",
+      "designation": "nahi pta",
+      "password": "sonU123@",
+      "id": 6
+    },
+    {
+      "date": "2022-02-16T18:30:00.000Z",
+      "firstname": "sonakshi",
+      "lastname": "sinha",
+      "email": "sona@gmail.com",
+      "role": "admin",
+      "designation": "ADMMIN",
+      "password": "sonaA@11231",
+      "id": 7
+    },
+    {
+      "date": "2022-02-16T18:30:00.000Z",
+      "firstname": "simaran",
+      "lastname": "haur",
+      "email": "simaran@test.com",
+      "role": "admin",
+      "designation": "ADMIN",
+      "password": "testW@123",
+      "id": 9
+    },
+    {
+      "date": "2022-02-16T18:30:00.000Z",
+      "firstname": "dilip",
+      "lastname": "das",
+      "email": "dilip@gmail.com",
+      "role": "admin",
+      "designation": "dev",
+      "password": "Dilip@123",
+      "id": 10
+    },
+    {
+      "date": "2022-02-16T18:30:00.000Z",
+      "firstname": "samip",
+      "lastname": "samip",
+      "password": "Samip@123",
+      "email": "samip@gmail.com",
+      "role": "admin",
+      "designation": "aadmin",
+      "id": 11
+    },
+    {
+      "date": "2022-02-19T18:30:00.000Z",
+      "firstname": "mikky",
+      "lastname": "mishra",
+      "password": "Mukskj213231@1231",
+      "email": "mukesha@gmail.com",
+      "role": "admin",
+      "designation": "admin",
+      "id": 12
+    },
+    {
+      "date": "2022-02-21T18:30:00.000Z",
+      "firstname": "Mukesh",
+      "lastname": "Mishra",
+      "email": "test@test.com",
+      "role": "dev",
+      "designation": "dev",
+      "password": "Test@1234",
+      "id": 13
+    },
+    {
+      "date": "2022-02-21T18:30:00.000Z",
+      "firstname": "mukesh",
+      "lastname": "mishra",
+      "email": "mishra12@test.com",
+      "role": "Dev",
+      "designation": "Cedsadsad",
+      "password": "Admin@1234",
+      "id": 14
+    }
+  ],
+  "timesheet-backend": [
+    {
+      "date": "2022-02-22",
+      "project": "angular",
+      "username": "gourish",
+      "description": "working done",
+      "no_of_hrs": 12,
+      "id": 1
+    },
+    {
+      "date": "2022-02-17T18:30:00.000Z",
+      "project": "angular",
+      "username": "mishi",
+      "description": "react webapp development",
+      "no_of_hrs": 5,
+      "id": 2
+    },
+    {
+      "date": "2022-02-16T18:30:00.000Z",
+      "project": "React",
+      "username": "juhi sharma",
+      "description": "i am  the best react developer",
+      "no_of_hrs": 5,
+      "id": 3
+    },
+    {
+      "date": "2022-02-17T18:30:00.000Z",
+      "project": "angular",
+      "username": "mikky",
+      "description": "testing by mikky",
+      "no_of_hrs": 5,
+      "id": 4
+    },
+    {
+      "date": "2022-02-17T18:30:00.000Z",
+      "project": "angular",
+      "username": "simaran",
+      "description": "i am a best javascipt developer",
+      "no_of_hrs": 6,
+      "id": 5
+    },
+    {
+      "date": "2022-02-18T18:30:00.000Z",
+      "project": "javascript",
+      "username": "sonia",
+      "description": "rest api",
+      "no_of_hrs": 6,
+      "id": 6
+    }
+  ]
+}

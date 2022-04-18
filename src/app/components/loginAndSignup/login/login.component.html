@@ -1,0 +1,61 @@
+<div class="container" style="margin:13% 4%">
+<mat-card>
+    <div class="mb-5">
+    <mat-card-title>
+        Login
+
+        <!-- login fail error handling -->
+        <div class="m-3">
+            <h4 *ngIf="failed_message" class="fw-bold" style="color: rgba(192, 13, 13, 0.822);">Incorrect Username and password <span> <mat-icon>no_encryption</mat-icon></span>
+            </h4>
+        </div>
+        <!-- login success messsage handling -->
+        <div class="m-3 fs-5">
+            <small *ngIf="success_message" class="success-msg fw-bold">Login Success
+              <span><i class="fa fa-check-circle" style="color:green;"></i></span> </small>
+        </div>
+    </mat-card-title>
+
+    </div>
+    <mat-card-content>
+        <form [formGroup]="LoginForm" autocomplete="off">
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Email</mat-label>
+                <input type="text" placeholder="Email Id" formControlName="emailid" matInput>
+                <div *ngIf="submitForm && f['emailid']['errors'] " >
+                    <mat-error style="text-transform: capitalize;" *ngIf="f['emailid']['errors']&& f['emailid']['errors']['required'] ">
+                        enter the email id
+                    </mat-error>
+                    <mat-error style="text-transform: capitalize;" *ngIf=" f['emailid']['errors']&& f['emailid']['errors']['email'] ">
+                        enter valid mail id
+                    </mat-error>
+                </div>
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Password</mat-label>
+                <!-- <input type="password" placeholder="Password" formControlName="password" matInput> -->
+                <input  [type]="showPassword ? 'text' : 'password'"  placeholder="Password" formControlName="password" matInput> 
+               
+                <!-- hide and show password  -->
+                <mat-icon matSuffix   (click)="togglePasswordVisibility()">
+                    {{showPassword?'visibility_off':'visibility'}}
+                </mat-icon>
+                  <!-- password errord -->
+                 <div *ngIf="submitForm && f['password']['errors'] " >
+                    <mat-error *ngIf="f['password']['errors']['required'] " >
+                    password is required
+                    </mat-error>
+                 </div>
+            </mat-form-field>
+          
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="onSubmit()" color="accent">Login</button>
+        <a href="" [routerLink]="['/signup']"> new user? signup here</a>
+
+    </mat-card-actions>
+  
+</mat-card>
+</div>
